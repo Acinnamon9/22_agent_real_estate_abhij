@@ -1,0 +1,29 @@
+/* AudioWaveform.css */
+
+.audio-waveform {
+  display: flex;
+  align-items: center;
+  height: 32px;
+  gap: 3px;
+  padding: 0 4px;
+}
+
+.audio-bar {
+  width: 4px;
+  background: linear-gradient(to top, #FF6B2C, #FF8F5C);
+  border-radius: 4px;
+  transition: height 0.08s ease;
+  box-shadow: 0 0 8px rgba(255, 107, 44, 0.3);
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .audio-waveform {
+    height: 28px;
+    gap: 2px;
+  }
+
+  .audio-bar {
+    width: 3px;
+  }
+}

@@ -1,0 +1,280 @@
+/* RealEstateAgentVoice.css - Premium Floating Voice Bar */
+
+/* Backdrop */
+.voice-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9998;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Container - Fixed at bottom center */
+.voice-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  z-index: 9999;
+  animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Main Voice Bar */
+.voice-bar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+  border-radius: 100px;
+  padding: 14px 20px 14px 16px;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    0 8px 24px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 107, 44, 0.2);
+}
+
+/* Pulse Container */
+.voice-pulse-container {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pulse Rings */
+.voice-pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 107, 44, 0.15);
+  animation: pulse 2s ease-out infinite;
+}
+
+.voice-pulse-ring.delay-1 {
+  animation-delay: 0.5s;
+}
+
+/* Icon Circle */
+.voice-icon-circle {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #FF6B2C 0%, #E85A1B 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 16px rgba(255, 107, 44, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.voice-icon-circle svg {
+  color: white;
+}
+
+/* Waveform */
+.voice-waveform {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+/* Agent Info */
+.voice-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 120px;
+}
+
+.voice-agent-name {
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.voice-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #4ADE80;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.voice-status-dot {
+  width: 6px;
+  height: 6px;
+  background: #4ADE80;
+  border-radius: 50%;
+  animation: blink 1.2s ease-in-out infinite;
+}
+
+/* Timer */
+.voice-timer {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 10px 18px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.voice-timer-value {
+  color: #FF6B2C;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'SF Mono', 'Roboto Mono', monospace;
+  letter-spacing: 0.05em;
+}
+
+/* End Button */
+.voice-end-button {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #EF4444 0%, #DC2626 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 
+    0 4px 16px rgba(239, 68, 68, 0.4),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin-left: 4px;
+}
+
+.voice-end-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(239, 68, 68, 0.5);
+  background: linear-gradient(135deg, #F87171 0%, #EF4444 100%);
+}
+
+.voice-end-button:active {
+  transform: scale(1.02);
+}
+
+.voice-end-button svg {
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(100%);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { 
+    transform: scale(1); 
+    opacity: 0.6; 
+  }
+  100% { 
+    transform: scale(1.8); 
+    opacity: 0; 
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 640px) {
+  .voice-bar-container {
+    padding: 16px;
+  }
+
+  .voice-bar {
+    gap: 12px;
+    padding: 12px 16px 12px 12px;
+    border-radius: 80px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .voice-pulse-container {
+    width: 44px;
+    height: 44px;
+  }
+
+  .voice-icon-circle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .voice-icon-circle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .voice-info {
+    min-width: auto;
+    flex: 1;
+  }
+
+  .voice-agent-name {
+    font-size: 14px;
+  }
+
+  .voice-status {
+    font-size: 11px;
+  }
+
+  .voice-timer {
+    padding: 8px 12px;
+  }
+
+  .voice-timer-value {
+    font-size: 14px;
+  }
+
+  .voice-end-button {
+    width: 42px;
+    height: 42px;
+  }
+
+  .voice-end-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .voice-waveform {
+    display: none;
+  }
+
+  .voice-bar {
+    gap: 10px;
+  }
+}

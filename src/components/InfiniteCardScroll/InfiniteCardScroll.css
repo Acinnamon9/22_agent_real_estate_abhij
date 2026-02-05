@@ -1,0 +1,61 @@
+/* InfiniteCardScroll.css - Premium White/Orange/Black Theme */
+
+.card-scroll-container {
+  width: 100%;
+  overflow: hidden;
+  outline: none;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFAF5 100%);
+}
+
+.card-scroll {
+  padding: 28px 20px;
+  border-radius: 20px;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+.card-item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  margin-right: 20px;
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .card-scroll {
+    padding: 20px 14px;
+  }
+
+  .card-item {
+    width: 100%;
+    margin: 0 32px;
+  }
+}
+
+.card-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.card-scroll,
+.card-item {
+  touch-action: pan-y;
+}
+
+/* Navigation buttons */
+.navigation-controls button {
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 107, 44, 0.15);
+  color: #FF6B2C;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.navigation-controls button:hover {
+  background: #FFFFFF;
+  border-color: #FF6B2C;
+  color: #E85A1B;
+  box-shadow: 0 4px 20px rgba(255, 107, 44, 0.15);
+}
